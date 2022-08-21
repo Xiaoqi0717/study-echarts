@@ -1,0 +1,115 @@
+<!--
+ * @Author: jingheng
+ * @Description: echarts board project:全国考研数据图表展示
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国考研数据图-2022</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <h1>2022年全国考研数据可视化展示</h1>
+        <div class="showTime"></div>
+    </header>
+    <!-- 当前时间函数 -->
+    <script>
+        var t = null;
+        t = setTimeout(time, 1000); //開始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+
+<!-- 页面主体部分 -->
+<section class="mainbox">
+<div class="column">
+    <div class="panel bar1">
+        <h2>全国近5年考研人数与招生人数(单位:万人)</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+    </div>
+    <div class="panel line1">
+        <h2>计算机专业国家线总分趋势图</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+    </div>
+    <div class="panel pie1">
+        <h2>年龄分布</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+    </div>
+</div>
+<div class="column">
+    <!-- no模块制作 -->
+    <div class="no">
+        <div class="no-hd"><ul><li>4570000</li>
+        <li>1170000</li></ul></div>
+        <div class="no-bd"><ul>
+            <li>考研供应人数</li>
+            <li>招生需求人数</li>
+        </ul></div>
+    </div>
+    <!-- 地图模块 -->
+    <div class="map">
+        <div class="map1"></div>
+        <div class="map2"></div>
+        <div class="map3"></div>
+        <div class="chart">地图模块</div>
+    </div>
+</div>
+
+<!-- 右侧 图表-->
+<div class="column">
+    <div class="panel bar2">
+        <h2>考研专业分布(占比/top5)</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+    </div>
+    <div class="panel line2">
+        <h2>考研成功趋势区</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+    </div>
+    <div class="panel pie2">
+        <h2>考研报考省市分布(top5 单位:万人)</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+    </div>
+</div>
+</section>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/china.js"></script>
+    <!-- <script src="./js/jquery.js"></script> -->
+    <script src="./js/index.js"></script>
+    <script src="./js/map.js"></script>
+</body>
+</html>
