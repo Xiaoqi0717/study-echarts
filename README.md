@@ -1,5 +1,5 @@
 # echarts
-
+*title：myEcharts-2022年全国考研数据可视化展示*
 ## 涉及技术
 基于flexible.js+rem智能大屏适配
 vs code 插件 cssrem
